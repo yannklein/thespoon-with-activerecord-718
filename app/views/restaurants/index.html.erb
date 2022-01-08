@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Our restaurants 🍽</h1>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= restaurant.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= '⭐️' * restaurant.rating %></h6>
+            <p class="card-text"><%= restaurant.address %></p>
+            <%= link_to 'More...', restaurant_path(restaurant), class: "card-link" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
